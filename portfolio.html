@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #ffffff;
+        }
+
+        .light-mode {
+            --bg-color: #ffffff;
+            --text-color: #0d0d0d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Consolas', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0077ffd6;
+        }
+
+        .theme-switch {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .description {
+            max-width: 600px;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px;
+            text-align: justify;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            max-width: 600px;
+        }
+
+        .about-image img {
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 50%;
+            border: 4px solid #7f00ff;
+            box-shadow: 0 0 15px #7f00ff;
+        }
+
+        .profile-pic {
+            width: 150px; /* Sesuaikan ukuran */
+            height: 150px;
+            border-radius: 50%; /* Bikin lingkaran */
+            border: 4px solid #7f00ff;
+            box-shadow: 0 0 15px #7f00ff;
+            object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+        }
+
+        .skills-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .skill:hover {
+            background: #7f00ff;
+            color: white;
+        }
+
+        .projects-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .code-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: none;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .code-button:hover {
+            background: white;
+            color: black;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .projects-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-switch" onclick="toggleTheme()">🌙</button>
+    </nav>
+
+    <section class="hero">
+        <h1>Hello World!</h1>
+        <p class="subtitle" id="typing-text"></p>
+        <p class="description">Passionate about creating elegant solutions and delivering exceptional user experiences.
+        </p>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hi there! 👋 I'm a Software Developer passionate about building innovative applications.</p>
+        </div>
+        <div class="about-image">
+            <img src="profile-picture.JPEG" alt="Profile Picture" class="profile-pic">
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">JavaScript</div>
+            <div class="skill">Java</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Node.js</div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="assets/images/web-ide.png" alt="Web-IDE">
+                <h3>Web-IDE 2.0</h3>
+                <p>A Collaborative WebIDE to Build Together.</p>
+                <button class="code-button">💻 Code</button>
+            </div>
+            <div class="project-card">
+                <img src="assets/images/web-ide.png" alt="Web-IDE">
+                <h3>Web-IDE 2.0</h3>
+                <p>A Collaborative WebIDE to Build Together.</p>
+                <button class="code-button">💻 Code</button>
+            </div>
+            <div class="project-card">
+                <img src="assets/images/web-ide.png" alt="Web-IDE">
+                <h3>Web-IDE 2.0</h3>
+                <p>A Collaborative WebIDE to Build Together.</p>
+                <button class="code-button">💻 Code</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <p>Let's connect! You can reach me through:</p>
+        <div class="social-icons">
+            <a href="https://github.com/putrilarasxx" target="_blank">
+                <img src="assets/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com/in/putrilarasxx" target="_blank">
+                <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:putrilarasati440@gmail.com">
+                <img src="assets/icons/email.svg" alt="Email">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Putri Larasati</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            let themeButton = document.querySelector(".theme-switch");
+            themeButton.textContent = document.body.classList.contains('light-mode') ? "🌞" : "🌙";
+        }
+    </script>
+</body>
+
+<script>
+    const texts = [
+        "I love solving problems.",
+        "Building elegant solutions.",
+        "Turning ideas into reality.",
+        "Coding is my passion."
+    ]; // Daftar teks yang akan ditampilkan
+
+    let index = 0; // Index teks
+    let charIndex = 0; // Index karakter saat ini
+    let currentText = "";
+    let isDeleting = false;
+
+    function typeEffect() {
+        const subtitle = document.getElementById("typing-text");
+
+        if (isDeleting) {
+            currentText = texts[index].substring(0, charIndex--);
+        } else {
+            currentText = texts[index].substring(0, charIndex++);
+        }
+
+        subtitle.textContent = `"${currentText}"`; // Update teks di HTML
+
+        if (!isDeleting && charIndex === texts[index].length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000); // Tunggu sebelum menghapus
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % texts.length; // Ganti teks
+            setTimeout(typeEffect, 500);
+        } else {
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+</html>

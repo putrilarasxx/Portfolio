@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const themeButton = document.getElementById("theme-switch");
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    const icon = menuToggle.querySelector("i");
 
     themeButton.addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
@@ -10,6 +11,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
+
+        const icon = menuToggle.querySelector("i");
+        if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove("active");
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+        });
     });
 
     const texts = [

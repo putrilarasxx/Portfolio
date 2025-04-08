@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeButton = document.getElementById("theme-switch");
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
-    const icon = menuToggle.querySelector("i");
+    const icon = menuToggle?.querySelector("i");
 
     themeButton.addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove("active");
-            icon.classList.remove("fa-times");
+            icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
         });
     });

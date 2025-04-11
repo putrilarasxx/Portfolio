@@ -32,15 +32,17 @@
     <section class="hero">
         <h1>Hello World!</h1>
         <p class="subtitle" id="typing-text"></p>
-        <p class="description">Passionate about bug hunting through manual testing, speeding up processes with automation, and quality assurance. Currently looking for great oppurtunities to contribute.
+        <p class="description">Passionate about bug hunting through manual testing, speeding up processes with automation, and quality assurance. Currently looking for great opportunities to contribute.
         </p> 
     </section>
 
     <section id="about" class="about-section">
         <div class="about-content">
             <h2>About</h2>
-            <p>Hi there! 👋 I'm a QA Tester passionate about finding bugs through manual testing and speeding up processes with
-            automation.</p>
+            <p>Hi there! 👋 I'm a QA Tester passionate about finding bugs through manual testing and speeding up processes with automation.
+            With strong attention to detail and a commitment to software quality. I focus on catching bugs early, verifying
+            functionality, and ensuring every software runs as smoothly as possible. Experienced in both manual and automation
+            testing, I enjoy improving products with every test case I execute.</p>
         </div>
         <div class="about-image">
             <img src="assets/profile-picture.JPEG" alt="Profile Picture" class="about-image">
@@ -57,6 +59,7 @@
             <div class="skill"><img src="https://jmeter.apache.org/images/jmeter_square.svg" width="24"> JMeter</div>
             <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" width="24"> MySQL</div>
             <div class="skill"><i class="fas fa-database" style="color: #00758f;"></i> SQL Query</div>
+            <div class="skill"><i class="fab fa-wordpress" style="color: #444140;"></i> WordPress.org</div>
             <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" width="24"> Java</div>
             <div class="skill"><i class="fab fa-html5" style="color: #e34f26;"></i> HTML</div>
             <div class="skill"><i class="fab fa-css3-alt" style="color: #1572b6;"></i> CSS</div>
@@ -68,41 +71,62 @@
 
     <section id="projects" class="projects-section">
         <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/kobermie.png" alt="Kober-Mie">
-                <h3>ERP Website Kober Mie</h3>
-                <p>To ensure smooth business continuity, Mie Kober needs an ERP system that optimizes performance through business process
-                alignment, technology migration, and application module support for more efficient operations.</p>
-                <a href="https://github.com/putrilarasxx/QA-KoberMie-Katalon" target="_blank" class="code-button">
-                    <i class="fab fa-github"></i> Code
-                </a>
-                <a href="https://drive.google.com/your-link-here" target="_blank" class="code-button drive">
-                    <i class="fas fa-file-alt"></i> Test Report
-                </a>
+        <div class="slider-container">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-wrapper">
+                <div class="projects-slider">
+                    <div class="project-card">
+                        <img src="assets/kobermie.png" alt="Kober-Mie">
+                        <h3>Kober Mie ERP</h3>
+                        <p>To ensure seamless business continuity, Kober Mie requires an ERP system that enhances performance by aligning business processes, 
+                            migrating technology, and supporting application modules for more efficient operations.</p>
+                        <a href="https://github.com/putrilarasxx/QA-KoberMie-Katalon" target="_blank" class="code-button">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/demen-care.png" alt="Demen-Care">
+                        <h3>Demen-Care</h3>
+                        <p>Digital Solutions for Better Dementia Care.</p>
+                        <a href="https://github.com/putrilarasxx/Demen-Care" target="_blank" class="code-button">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1JN6MubyJAL3N6n_Qdvv9G03n41g9j2Xv?usp=drive_link" target="_blank"
+                            class="code-button drive">
+                            <i class="fas fa-file-alt"></i> Test Report
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/scrum_management_tools.png" alt="Scrum-Management-Tools">
+                        <h3>Scrum Management Tool</h3>
+                        <p>The Scrum Management Tool was developed to enhance the implementation of Scrum practices in software development projects at Startup XYZ.</p>
+                        <a href="https://www.figma.com/proto/redcbfFH9Zx2i4JyAHu6Xx/TA_1302204011?node-id=32-3&t=YIY23IvjnKOHk4rl-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A3" target="_blank" class="code-button">
+                            <i class="fab fa-figma"></i> Prototype
+                        </a>
+                        <a href="https://jurnal.uts.ac.id/index.php/JINTEKS/article/view/4856/2255" target="_blank" class="code-button drive">
+                            <i class="fas fa-file-alt"></i> Journal
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/YCC.png" alt="Yakes-Care-Corner">
+                        <h3>Yakes Care Corner</h3>
+                        <p>YCC is an IoT-based health technology innovation developed to enhance the digital customer experience of Yakes Telkom.
+                        Performed functional testing on the My Innocent App and YCC IoT device as part of the Yakes Care Corner service.</p>
+                        <a href="https://drive.google.com/drive/folders/1n8nUH70Bzj7STLftQ2Phdf_AhMzPi7Qm?usp=drive_link" target="_blank" class="code-button drive">
+                            <i class="fas fa-file-alt"></i> Test Report
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/HWC.png" alt="High-Wall-Cleaner">
+                        <h3>High Wall Cleaner</h3>
+                        <p>Developed a test plan for the High Wall Cleaner project — an eco-friendly innovation by Telkom GSD Lampung to improve the efficiency of high-rise building cleaning.</p>
+                        <a href="https://drive.google.com/drive/folders/15tMC5I6-u_OszHmNhXacGLuuzK1sEpNa?usp=drive_link" target="_blank" class="code-button drive">
+                            <i class="fas fa-file-alt"></i> Test Plan
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="project-card">
-                <img src="assets/demen-care.png" alt="Demen-Care">
-                <h3>Demen-Care</h3>
-                <p>Digital Solutions for Better Dementia Care.</p>
-                <a href="https://github.com/putrilarasxx/Demen-Care" target="_blank" class="code-button">
-                    <i class="fab fa-github"></i> Code
-                </a>
-                <a href="https://drive.google.com/drive/folders/1JN6MubyJAL3N6n_Qdvv9G03n41g9j2Xv?usp=drive_link" target="_blank" class="code-button drive">
-                    <i class="fas fa-file-alt"></i> Test Report
-                </a>
-            </div>
-            <div class="project-card">
-                <img src="assets/images/web-ide.png" alt="Web-IDE">
-                <h3>Web-IDE 2.0</h3>
-                <p>A Collaborative WebIDE to Build Together.</p>
-                <a href="https://github.com/putrilarasxx/your-link-here" target="_blank" class="code-button">
-                    <i class="fab fa-github"></i> Code
-                </a>
-                <a href="https://drive.google.com/your-link-here" target="_blank" class="code-button drive">
-                    <i class="fas fa-file-alt"></i> Test Report
-                </a>
-            </div>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 

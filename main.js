@@ -66,4 +66,79 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     typeEffect();
+
+    const slider = document.querySelector('.projects-slider');
+    const projectCards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const cardWidth = document.querySelector('.project-card').offsetWidth + 20;
+
+    let currentIndex = 0;
+    let cardsPerSlide = window.innerWidth >= 768 ? 3 : 1;
+    let scrollAmount = 0;
+
+    function updateCardsPerSlide() {
+        cardsPerSlide = window.innerWidth >= 768 ? 3 : 1;
+    }
+
+    function updateSliderPosition() {
+        const cardWidth = projectCards[0].offsetWidth + 20; // 20 = gap
+        const offset = currentIndex * cardWidth;
+        slider.style.transform = `translateX(-${offset}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < projectCards.length - cardsPerSlide) {
+            currentIndex++;
+            updateSliderPosition();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSliderPosition();
+        }
+    });
+
+    let startX = 0;
+    let startY = 0;
+    let touchStartTime = 0;
+    let isSwiping = false;
+
+    slider.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        touchStartTime = new Date().getTime();
+        isSwiping = false;
+    });
+
+    slider.addEventListener('touchmove', e => {
+        const deltaX = e.touches[0].clientX - startX;
+        const deltaY = e.touches[0].clientY - startY;
+
+        if (Math.abs(deltaX) > 30 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            isSwiping = true;
+        }
+    });
+
+    slider.addEventListener('touchend', e => {
+        const deltaX = e.changedTouches[0].clientX - startX;
+        const deltaY = e.changedTouches[0].clientY - startY;
+        const elapsed = new Date().getTime() - touchStartTime;
+
+        const isSwipe = Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY) && elapsed < 500;
+
+        console.log('Touchend - isSwipe:', isSwipe);
+
+        if (isSwipe) {
+            e.preventDefault();
+            if (deltaX > 0 && currentIndex > 0) {
+                currentIndex--;
+            } else if (deltaX < 0 && currentIndex < projectCards.length - cardsPerSlide) {
+                currentIndex++;
+            }
+            updateSliderPosition();
+        }
+    });
 });

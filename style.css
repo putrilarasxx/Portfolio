@@ -252,11 +252,14 @@ h1 {
 
 .project-card {
     background-color: #1a1a1a;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    max-width: 300px;
     text-align: left;
+    flex: 0 0 30%;
+    max-width: 28.33%;
+    scroll-snap-align: start;
+    border: 1px solid white;
 }
 
 .project-card img {
@@ -273,6 +276,51 @@ h1 {
 .project-card p {
     font-size: 0.9rem;
     color: #ccc;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.projects-slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px;
+    will-change: transform;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto !important;
+    z-index: 10 !important;
+    position: relative;
+    padding: 20px;
+    scroll-padding: 20px;
+    
+}
+
+.slider-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+}
+
+.slider-btn:hover {
+    color: #ffb948;
 }
 
 .code-button {
@@ -362,49 +410,54 @@ footer {
         text-align: center;
     }
 
-    .projects-container {
+    .project-container {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    flex-direction: column;
-    background-color: var(--bg-color);
-    width: 200px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-  .nav-links.show {
-    display: flex;
-  }
+    .nav-links.show {
+        display: flex;
+    }
 
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 60%;
-    height: 100vh;
-    background-color: #1a1a1a;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 2rem;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-  }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
 
-  .nav-menu.active {
-      right: 0;
-  }
+    .nav-menu.active {
+        right: 0;
+    }
 
-  .menu-toggle {
-      display: block;
-  }
+    .menu-toggle {
+        display: block;
+    }
+
+    .project-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

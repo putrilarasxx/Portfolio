@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const texts = [
         "Finding bugs before users find them.",
-        "Ensuring software quality through manual and automation testing.",
+        "Ensuring software quality through manual and automated testing.",
         "I love solving problems.",
         "Breaking code to build perfection."
     ];

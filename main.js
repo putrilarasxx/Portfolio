@@ -30,11 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
     const texts = [
         "Finding bugs before users find them.",
-        "Ensuring software quality through manual and automated testing.",
-        "I love solving problems.",
-        "Breaking code to build perfection."
+        "Great software is built on strong testing.",
+        "Breaking code to build perfection.",
+        "Ensuring software quality through manual and automated testing."
     ];
 
     let index = 0;
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateSliderPosition() {
-        const cardWidth = projectCards[0].offsetWidth + 20; // 20 = gap
+        const cardWidth = projectCards[0].offsetWidth + 20;
         const offset = currentIndex * cardWidth;
         slider.style.transform = `translateX(-${offset}px)`;
     }

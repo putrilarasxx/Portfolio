@@ -212,8 +212,7 @@ h1 {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #ffffff;
-    box-shadow: 0 0 15px #ffb948;
+    border: 2px solid #ffffff;
     object-fit: cover;
 }
 
